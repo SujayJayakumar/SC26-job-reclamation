@@ -1,0 +1,13 @@
+{
+  "figure_count": 22,
+  "figures_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/figures",
+  "logs_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/logs",
+  "outputs_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs",
+  "status": "complete",
+  "tables": {
+    "completions_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/completions.csv",
+    "interference_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/interference.csv",
+    "preemptions_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/preemptions.csv",
+    "utilization_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/utilization.csv"
+  }
+}

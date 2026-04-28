@@ -1,0 +1,10 @@
+scenario,mode,threshold,interference_event_count,completion_count,unique_opportunistic_jobs_run,cluster_utilization_improvement_pct
+aggressive_threshold_0.15,aggressive,0.15,1083,3338,5501,0.5046990222552106
+buffered_threshold_0.15,buffered,0.15,924,3383,5506,0.5063885722533795
+original_threshold_0.15,original,0.15,0,0,0,0.0
+aggressive_threshold_0.20,aggressive,0.2,805,3406,5519,0.5080883639190057
+buffered_threshold_0.20,buffered,0.2,772,3408,5519,0.5085470172172033
+original_threshold_0.20,original,0.2,0,0,0,0.0
+aggressive_threshold_0.25,aggressive,0.25,621,3397,5519,0.5090609971951573
+buffered_threshold_0.25,buffered,0.25,633,3446,5519,0.5091384328713299
+original_threshold_0.25,original,0.25,0,0,0,0.0

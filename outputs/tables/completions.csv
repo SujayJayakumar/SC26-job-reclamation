@@ -1,0 +1,10 @@
+scenario,mode,threshold,completion_count,unique_opportunistic_jobs_run,throughput_proxy_cpu_core_minutes,throughput_proxy_gpu_device_minutes
+aggressive_threshold_0.15,aggressive,0.15,3338,5501,93137290.0,196860.0
+buffered_threshold_0.15,buffered,0.15,3383,5506,93449080.0,202970.0
+original_threshold_0.15,original,0.15,0,0,0.0,0.0
+aggressive_threshold_0.20,aggressive,0.2,3406,5519,93762760.0,220090.0
+buffered_threshold_0.20,buffered,0.2,3408,5519,93847400.0,219170.0
+original_threshold_0.20,original,0.2,0,0,0.0,0.0
+aggressive_threshold_0.25,aggressive,0.25,3397,5519,93942250.0,218840.0
+buffered_threshold_0.25,buffered,0.25,3446,5519,93956540.0,218270.0
+original_threshold_0.25,original,0.25,0,0,0.0,0.0

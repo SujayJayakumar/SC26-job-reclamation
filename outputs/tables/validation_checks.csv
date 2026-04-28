@@ -1,0 +1,10 @@
+scenario,cpu_within_node_cap,job_count_within_configured_cap,no_negative_resources,timestamps_monotonic,preemption_restores_state_partial,max_opportunistic_cpu_allocated,max_opportunistic_gpu_allocated,max_opportunistic_job_count
+aggressive_threshold_0.15,True,True,True,True,True,127.0,12.0,4
+aggressive_threshold_0.20,True,True,True,True,True,127.0,12.0,4
+aggressive_threshold_0.25,True,True,True,True,True,127.0,12.0,4
+buffered_threshold_0.15,True,True,True,True,True,127.0,12.0,4
+buffered_threshold_0.20,True,True,True,True,True,127.0,12.0,4
+buffered_threshold_0.25,True,True,True,True,True,127.0,12.0,4
+original_threshold_0.15,True,True,True,True,True,0.0,0.0,0
+original_threshold_0.20,True,True,True,True,True,0.0,0.0,0
+original_threshold_0.25,True,True,True,True,True,0.0,0.0,0

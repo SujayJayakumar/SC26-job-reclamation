@@ -1,0 +1,48 @@
+Run log: /home/sujay/Desktop/SUJAY/SC Paper/outputs/logs/run_20260406_094128.log
+Starting full reproducibility run
+mkdir -p failed for path /home/sujay/.config/matplotlib: [Errno 30] Read-only file system: '/home/sujay/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-131ndirk because there was an issue with the default path (/home/sujay/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Running phase selection: preprocess
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+mkdir -p failed for path /home/sujay/.config/matplotlib: [Errno 30] Read-only file system: '/home/sujay/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-0qpb5xsk because there was an issue with the default path (/home/sujay/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Running phase selection: simulate
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+mkdir -p failed for path /home/sujay/.config/matplotlib: [Errno 30] Read-only file system: '/home/sujay/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-157pfjaw because there was an issue with the default path (/home/sujay/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Running phase selection: metrics
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+mkdir -p failed for path /home/sujay/.config/matplotlib: [Errno 30] Read-only file system: '/home/sujay/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-v6ay4rk2 because there was an issue with the default path (/home/sujay/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Running phase selection: plots
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+mkdir -p failed for path /home/sujay/.config/matplotlib: [Errno 30] Read-only file system: '/home/sujay/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-a5o14syr because there was an issue with the default path (/home/sujay/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+{
+  "validation_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/validation_checks.csv",
+  "validation_json": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/logs/validation_summary.json"
+}
+mkdir -p failed for path /home/sujay/.config/matplotlib: [Errno 30] Read-only file system: '/home/sujay/.config/matplotlib'
+Matplotlib created a temporary cache directory at /tmp/matplotlib-_alau455 because there was an issue with the default path (/home/sujay/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+{
+  "status": "complete",
+  "outputs_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs",
+  "tables": {
+    "utilization_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/utilization.csv",
+    "preemptions_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/preemptions.csv",
+    "interference_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/interference.csv",
+    "completions_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/completions.csv"
+  },
+  "figure_count": 22,
+  "figures_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/figures",
+  "logs_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/logs"
+}
+Completed full reproducibility run
