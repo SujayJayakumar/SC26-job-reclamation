@@ -1,0 +1,263 @@
+Data quick reference for merged jobs + telemetry correlation
+
+1. Main files and purpose
+
+merged_all_jobs.jsonl
+One merged and deduplicated PBS job dataset created from:
+- final_full_job_data.txt
+- full_job_details.txt
+- qstat_output.txt
+
+rakesha_jobs.json
+User-specific extracted jobs for rakesha, with:
+- job metadata
+- start_time / end_time
+- queue_wait_seconds / queue_wait_time when qtime and stime are both present
+- node list
+
+rakesha_job_telemetry_summary.json
+Main correlated output for analysis.
+Contains only rakesha jobs that actually have matched CPU or GPU telemetry rows.
+
+rakesha_job_cpu_samples.csv
+Raw matched CPU telemetry rows for the kept jobs.
+Useful for plotting time series and verifying averages.
+
+rakesha_job_gpu_samples.csv
+Raw matched GPU telemetry rows for the kept jobs.
+Useful for plotting time series, per-card inspection, and verifying averages.
+
+cpu_metrics.csv
+Node-level CPU telemetry.
+One row per node and timestamp.
+
+gpu_status.csv
+GPU-card-level telemetry.
+One row per GPU card and timestamp.
+
+memory_data.csv
+Memory telemetry with longer coverage than CPU/GPU.
+Can be correlated later if needed.
+
+
+2. Source file time ranges
+
+Raw PBS job source files:
+- final_full_job_data.txt: 2024-09-01 00:16:32 to 2026-01-31 23:59:39
+- full_job_details.txt: 2025-09-01 08:58:33 to 2026-01-31 23:59:39
+- qstat_output.txt: 2024-09-01 00:16:32 to 2025-09-03 14:49:30
+
+Merged PBS dataset:
+- merged_all_jobs.jsonl: built from all 3 files above
+- raw job blocks read: 420577
+- unique jobs written: 210287
+
+Telemetry files:
+- cpu_metrics.csv: 2025-06-06 12:02:54 to 2026-02-05 16:10:01
+- gpu_status.csv: 2025-06-04 14:40:02 to 2026-02-05 16:10:01
+- memory_data.csv: 2025-06-08 18:04:09+00:00 to 2026-03-26 11:22:12+00:00
+
+User-specific extracted jobs:
+- rakesha_jobs.json: 266 correlation-ready jobs
+- first_start_time: Wed Dec 4 15:40:44 2024
+- last_end_time: Sat Jan 31 15:31:38 2026
+- jobs_with_queue_wait_time: 233
+
+Correlated telemetry output:
+- jobs loaded from rakesha_jobs.json: 266
+- jobs kept with telemetry: 133
+- jobs excluded without telemetry: 133
+- matched CPU rows: 68162
+- matched GPU rows: 119852
+
+
+3. Recommended overlap window for CPU/GPU correlation
+
+For CPU + GPU together, the strongest overlap window is:
+- 2025-06-06 12:02:54 to 2026-01-31 23:59:39
+
+Reason:
+- jobs exist through 2026-01-31
+- CPU logging starts on 2025-06-06
+- GPU logging starts slightly earlier on 2025-06-04
+- to require both CPU and GPU coverage, use CPU start as the effective lower bound
+
+If only GPU overlap matters, the possible lower bound is:
+- 2025-06-04 14:40:02
+
+If memory_data.csv is used later, it has broader coverage beyond the CPU/GPU end date.
+
+
+4. Data structures
+
+4.1 merged_all_jobs.jsonl
+Format:
+- one JSON object per line
+- one merged record per unique job_id
+- source_files shows which raw files contributed to that record
+
+Sample record:
+{"job_id": "100000.champ1", "source_files": ["final_full_job_data.txt", "qstat_output.txt"], "Job_Name": "B4", "Job_Owner": "amitl@champ2.cm.cluster", "job_state": "F", "queue": "gpu", "ctime": "Sun Jan 12 17:31:30 2025", "exec_host": "r04gn02/0", "exec_vnode": "(r04gn02:ngpus=1:ncpus=1)", "mtime": "Sun Jan 12 19:29:32 2025", "qtime": "Sun Jan 12 17:31:30 2025", "Resource_List.ngpus": "1", "Resource_List.walltime": "60:00:00", "stime": "Sun Jan 12 17:31:31 2025", "etime": "Sun Jan 12 17:40:22 2025", "history_timestamp": "1736683904"}
+
+
+4.2 rakesha_jobs.json
+Format:
+- JSON object with summary + jobs list
+- jobs are already deduplicated for user rakesha
+- includes derived queue wait fields
+
+Important fields:
+- job_id
+- queue
+- job_state
+- qtime
+- stime
+- etime
+- ctime
+- mtime
+- start_time
+- start_time_source
+- end_time
+- queue_wait_seconds
+- queue_wait_time
+- has_queue_wait_time
+- nodes
+- ncpus_req
+- ncpus_used
+- ngpus_req
+- walltime_req
+- walltime_used
+- cpupercent_used
+
+Sample output:
+{
+  "job_id": "81837.champ1",
+  "user": "rakesha",
+  "queue": "workq",
+  "job_state": "F",
+  "qtime": "Wed Dec  4 15:40:44 2024",
+  "stime": "Wed Dec  4 15:40:44 2024",
+  "start_time": "Wed Dec  4 15:40:44 2024",
+  "start_time_source": "stime",
+  "end_time": "Wed Dec  4 16:11:14 2024",
+  "queue_wait_seconds": 0,
+  "queue_wait_time": "00:00:00",
+  "has_queue_wait_time": true,
+  "nodes": ["r08cn38"],
+  "ncpus_req": "128",
+  "ncpus_used": "128",
+  "ngpus_req": null,
+  "walltime_req": "00:30:00",
+  "walltime_used": "00:30:28",
+  "cpupercent_used": "0"
+}
+
+
+4.3 cpu_metrics.csv
+Schema:
+node_id,timestamp,cpu1_temp,cpu2_temp,cpu1_frequency,cpu2_frequency,cpu1_utilization,cpu2_utilization
+
+Sample rows:
+node_id,timestamp,cpu1_temp,cpu2_temp,cpu1_frequency,cpu2_frequency,cpu1_utilization,cpu2_utilization
+r01cn01,2026-02-05 16:10:01,54.0,51.0,2450.0,2461.1814,83.16,82.54
+r01cn08,2026-02-05 16:10:01,54.0,52.0,2450.0,2460.3584,79.26,79.13
+
+Interpretation:
+- one row per node per timestamp
+- approximately 5 minute sampling
+
+
+4.4 gpu_status.csv
+Schema:
+card_id,timestamp,is_healthy,power_consum,utilization,memory,temperature
+
+Sample rows:
+card_id,timestamp,is_healthy,power_consum,utilization,memory,temperature
+05_03_01,2026-02-05 16:10:01,True,234.000,90.00,8872.000,44.00
+04_01_02,2026-02-05 16:10:01,True,81.000,38.00,4070.000,37.00
+
+Interpretation:
+- one row per GPU card per timestamp
+- approximately 10 minute sampling
+- card_id 04_02_01 maps to node r04gn02, card 01
+
+
+4.5 rakesha_job_telemetry_summary.json
+Format:
+- main output for analysis
+- jobs list contains only jobs with actual telemetry overlap
+- excluded_jobs_without_telemetry contains jobs that had no matching CPU/GPU rows for their node/time range
+
+Important telemetry fields per job:
+- cpu_row_count
+- gpu_row_count
+- cpu_nodes_seen
+- gpu_nodes_seen
+- gpu_cards_seen
+- cpu_metrics.*.count / avg / min / max
+- gpu_metrics.*.count / avg / min / max
+
+Meaning of count:
+- cpu_row_count / gpu_row_count: number of matched telemetry rows during the job window
+- metric count: number of usable non-null values for that specific metric among those matched rows
+
+Sample correlated job:
+{
+  "job_id": "168332.champ1",
+  "user": "rakesha",
+  "queue": "gpu",
+  "job_state": "F",
+  "nodes": ["r04gn02"],
+  "start_time": "Mon Jun 09 10:44:45 2025",
+  "end_time": "Wed Jun 11 10:45:25 2025",
+  "start_time_source": "etime",
+  "end_time_source": null,
+  "ncpus_req": "128",
+  "ncpus_used": "128",
+  "ngpus_req": "4",
+  "walltime_req": "48:00:00",
+  "walltime_used": "48:00:38",
+  "cpupercent_used": "16",
+  "cpu_row_count": 578,
+  "gpu_row_count": 624,
+  "cpu_nodes_seen": ["r04gn02"],
+  "gpu_nodes_seen": ["r04gn02"],
+  "gpu_cards_seen": ["04_02_01", "04_02_02", "04_02_03", "04_02_04"],
+  "cpu_metrics": {
+    "cpu1_utilization": {"count": 578, "avg": 8.7385, "min": 7.97, "max": 9.61},
+    "cpu2_utilization": {"count": 578, "avg": 9.6004, "min": 8.76, "max": 10.55}
+  },
+  "gpu_metrics": {
+    "utilization": {"count": 612, "avg": 0.0, "min": 0.0, "max": 0.0},
+    "power_consum": {"count": 612, "avg": 61.3938, "min": 57.0, "max": 72.0}
+  }
+}
+
+This is a strong underutilization example because:
+- ngpus_req = 4
+- GPU utilization average = 0.0
+- CPU utilization averages around 9 percent
+- runtime is about 48 hours
+
+
+5. No-data rule
+
+If a job falls outside the telemetry logging window, or its node/time range has no matching telemetry rows:
+- it is excluded from the main jobs list in rakesha_job_telemetry_summary.json
+- it appears in excluded_jobs_without_telemetry with message:
+  No CPU or GPU values were found for this node and time range.
+
+
+6. Suggested workflow for AI or quick manual analysis
+
+Use these files in this order:
+1. sample_available_data.txt
+   Quick reference for file meaning, ranges, overlap window, and example formats.
+2. merged_all_jobs.jsonl
+   Master merged PBS jobs dataset.
+3. rakesha_jobs.json
+   User-specific extracted jobs with derived times and queue wait.
+4. rakesha_job_telemetry_summary.json
+   Main analysis-ready correlated output.
+5. rakesha_job_cpu_samples.csv and rakesha_job_gpu_samples.csv
+   Use when plotting graphs or rechecking a suspicious job.

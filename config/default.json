@@ -1,0 +1,50 @@
+{
+  "seed": 42,
+  "data_dir": "Data",
+  "results_dir": "results",
+  "paper_outputs_dir": "results/paper_outputs",
+  "processed_data_dir": "data/processed",
+  "telemetry": {
+    "cpu_interval_minutes": 5,
+    "gpu_interval_minutes": 10,
+    "memory_interval_minutes": 10,
+    "evaluation_interval_minutes": 10
+  },
+  "thresholds": [0.15, 0.20, 0.25],
+  "baselines": ["original", "aggressive", "buffered"],
+  "queue": {
+    "selection_window": 25,
+    "scan_limit": 10000,
+    "assume_non_empty": true,
+    "selection_policy": "best_fit",
+    "max_injected_jobs_per_node": 4,
+    "checkpoint_interval_timestamps": 500
+  },
+  "cluster": {
+    "cpu_cores_per_node": 128,
+    "gpus_per_node": 4
+  },
+  "memory_guard": {
+    "max_memory_utilization": 0.50,
+    "max_relative_spike": 1.00
+  },
+  "buffers": {
+    "0.15": 0.25,
+    "0.20": 0.30,
+    "0.25": 0.40
+  },
+  "preemption": {
+    "buffer_usage_fraction": 0.80
+  },
+  "files": {
+    "cpu_metrics": "Data/cpu_metrics.csv",
+    "gpu_metrics": "Data/gpu_status.csv",
+    "memory_metrics": "Data/memory_data.csv",
+    "jobs": "Data/merged_all_jobs.jsonl"
+  },
+  "phase_01": {
+    "cpu_chunksize": 250000,
+    "gpu_chunksize": 250000,
+    "job_chunksize": 25000
+  }
+}
