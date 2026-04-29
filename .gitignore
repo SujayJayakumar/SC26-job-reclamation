@@ -1,0 +1,40 @@
+# Virtual environments
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local tooling / editor state
+.codex/
+.DS_Store
+.idea/
+.vscode/
+
+# Temporary / manual local files
+tmp_run_phase9_manual.py
+
+# Runtime logs
+outputs/logs/run_*.log
+
+# Large dataset files fetched from Zenodo
+Data/cpu_metrics.csv
+Data/gpu_status.csv
+Data/memory_data.csv
+Data/merged_all_jobs.jsonl
+
+# Optional local raw/supporting data not needed in GitHub by default
+Data/final_full_job_data.txt
+Data/full_job_details.txt
+Data/qstat_output.txt
+Data/sample_available_data.txt
+Data/rakesha_job_cpu_samples.csv
+Data/rakesha_job_gpu_samples.csv
+Data/rakesha_jobs.json
+Data/raw_data/
+Data/old data/
+Data/rakesha_experiment/
+Data/.vscode/
+Data/__pycache__/
+Data/.~lock.memory_data.csv#
