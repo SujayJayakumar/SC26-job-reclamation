@@ -1,0 +1,36 @@
+{
+  "completed_at": "2026-04-02T09:30:22.141021+00:00",
+  "display_name": "Data Loading",
+  "evaluation_interval_minutes": 10,
+  "input_files": {
+    "cpu_metrics": {
+      "mtime_epoch": 1773650510.1447215,
+      "path": "/home/sim/Desktop/SC Paper/Data/cpu_metrics.csv",
+      "sha256_prefix_first_mb": "407f0181813f7824810d0a185031d189ea858df3dba2c488994f202edbc64203",
+      "size_bytes": 2039452911
+    },
+    "gpu_metrics": {
+      "mtime_epoch": 1773631260.0,
+      "path": "/home/sim/Desktop/SC Paper/Data/gpu_status.csv",
+      "sha256_prefix_first_mb": "7683d5c543c4c33a074f049a7290df0fe1196e8173e3900fa7d037a5e29be8d2",
+      "size_bytes": 102948947
+    },
+    "jobs": {
+      "mtime_epoch": 1774866125.8940928,
+      "path": "/home/sim/Desktop/SC Paper/Data/merged_all_jobs.jsonl",
+      "sha256_prefix_first_mb": "16ccabf6b76c89dbc7ac29fa71b0cb67bb60802aa2a2554f4243b77d3f409118",
+      "size_bytes": 1868221028
+    },
+    "memory_metrics": {
+      "mtime_epoch": 1774524382.6532178,
+      "path": "/home/sim/Desktop/SC Paper/Data/memory_data.csv",
+      "sha256_prefix_first_mb": "3665ce5a2c3a7bfe4b43e90c6f8c205845a5745c6c7f54e3b9c9f017d18de7c5",
+      "size_bytes": 1056366113
+    }
+  },
+  "phase_id": "phase_01_data_loading",
+  "scenario": "buffered_threshold_0.20",
+  "seed": 42,
+  "started_at": "2026-04-02T09:30:22.138520+00:00",
+  "status": "complete"
+}
