@@ -1,0 +1,36 @@
+Run log: /home/sujay/Desktop/SUJAY/SC Paper/outputs/logs/run_20260429_230812.log
+Starting full reproducibility run
+Running phase selection: preprocess
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+Running phase selection: simulate
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+Running phase selection: metrics
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+Running phase selection: plots
+Scenarios: original_threshold_0.15, original_threshold_0.20, original_threshold_0.25, aggressive_threshold_0.15, aggressive_threshold_0.20, aggressive_threshold_0.25, buffered_threshold_0.15, buffered_threshold_0.20, buffered_threshold_0.25
+Force: False
+Done.
+{
+  "validation_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/validation_checks.csv",
+  "validation_json": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/logs/validation_summary.json"
+}
+{
+  "status": "complete",
+  "outputs_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs",
+  "tables": {
+    "utilization_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/utilization.csv",
+    "preemptions_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/preemptions.csv",
+    "interference_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/interference.csv",
+    "completions_csv": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/tables/completions.csv"
+  },
+  "figure_count": 23,
+  "figures_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/figures",
+  "logs_dir": "/home/sujay/Desktop/SUJAY/SC Paper/outputs/logs"
+}
+Completed full reproducibility run
