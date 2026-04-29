@@ -1,0 +1,19 @@
+{
+  "completed": [
+    {
+      "manifest_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/buffered_threshold_0.20/phase_10_metrics/manifest.json",
+      "phase_id": "phase_10_metrics",
+      "scenario": "buffered_threshold_0.20"
+    }
+  ],
+  "completed_at": "2026-04-29T17:39:08.364694+00:00",
+  "config_path": "/home/sujay/Desktop/SUJAY/SC Paper/config/default.json",
+  "phase_ids": [
+    "phase_10_metrics"
+  ],
+  "scenarios": [
+    "buffered_threshold_0.20"
+  ],
+  "seed": 42,
+  "started_at": "2026-04-29T17:39:08.364524+00:00"
+}
