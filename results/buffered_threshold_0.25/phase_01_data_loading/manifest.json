@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-04-02T09:30:22.144734+00:00",
+  "display_name": "Data Loading",
+  "force": true,
+  "payload_path": "/home/sim/Desktop/SC Paper/results/buffered_threshold_0.25/phase_01_data_loading/payload.json",
+  "phase_id": "phase_01_data_loading",
+  "scenario": "buffered_threshold_0.25",
+  "seed": 42,
+  "status": "complete"
+}
