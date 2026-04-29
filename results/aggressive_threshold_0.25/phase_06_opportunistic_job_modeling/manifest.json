@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-04-06T06:27:53.570957+00:00",
+  "display_name": "Opportunistic Job Modeling",
+  "force": true,
+  "payload_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/aggressive_threshold_0.25/phase_06_opportunistic_job_modeling/payload.json",
+  "phase_id": "phase_06_opportunistic_job_modeling",
+  "scenario": "aggressive_threshold_0.25",
+  "seed": 42,
+  "status": "complete"
+}
