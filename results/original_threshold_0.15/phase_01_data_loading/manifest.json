@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-04-04T20:05:53.930186+00:00",
+  "display_name": "Data Loading",
+  "force": true,
+  "payload_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/original_threshold_0.15/phase_01_data_loading/payload.json",
+  "phase_id": "phase_01_data_loading",
+  "scenario": "original_threshold_0.15",
+  "seed": 42,
+  "status": "complete"
+}

@@ -1,0 +1,74 @@
+{
+  "completed_at": "2026-04-04T20:10:19.612824+00:00",
+  "display_name": "Preprocessing",
+  "job_mapping_stats": {
+    "jobs_loaded": 210287,
+    "jobs_overlapping_window": 100022,
+    "jobs_without_nodes": 3867,
+    "mapped_rows_written": 239602
+  },
+  "phase_02_summary_path": "/home/sujay/Desktop/SUJAY/SC Paper/Data/processed/phase_02_summary.json",
+  "phase_id": "phase_02_preprocessing",
+  "processed_outputs": {
+    "job_mapped_parquet": {
+      "columns": [
+        "job_id",
+        "node_id",
+        "queue",
+        "job_state",
+        "qtime_ts",
+        "stime_ts",
+        "etime_ts",
+        "mtime_ts",
+        "job_start_ts",
+        "job_end_ts",
+        "job_earliest_ts",
+        "job_latest_ts",
+        "node_count_effective",
+        "requested_nodes_total",
+        "allocated_cores_total",
+        "allocated_gpus_total",
+        "allocated_cores_per_node",
+        "allocated_gpus_per_node"
+      ],
+      "path": "/home/sujay/Desktop/SUJAY/SC Paper/Data/processed/job_mapped.parquet",
+      "rows_written": 239602
+    },
+    "node_metrics_parquet": {
+      "columns": [
+        "node_id",
+        "interval_start",
+        "cpu1_utilization_mean",
+        "cpu2_utilization_mean",
+        "cpu_utilization_mean",
+        "cpu1_frequency_mean",
+        "cpu2_frequency_mean",
+        "cpu1_temp_mean",
+        "cpu2_temp_mean",
+        "cpu_samples",
+        "gpu_utilization_mean",
+        "gpu_memory_mean",
+        "gpu_temperature_mean",
+        "gpu_power_mean",
+        "gpu_healthy_ratio",
+        "gpu_cards_seen",
+        "gpu_samples",
+        "memory_used_percent_mean",
+        "memory_used_mb_mean",
+        "swap_used_percent_mean",
+        "page_faults_mean",
+        "memory_bandwidth_mean",
+        "memory_samples",
+        "telemetry_present_any"
+      ],
+      "coverage_end": "2026-01-31T23:50:00",
+      "coverage_start": "2025-06-08T18:00:00",
+      "path": "/home/sujay/Desktop/SUJAY/SC Paper/Data/processed/node_metrics.parquet",
+      "rows_written": 14417208
+    }
+  },
+  "scenario": "original_threshold_0.15",
+  "seed": 42,
+  "started_at": "2026-04-04T20:08:03.825294+00:00",
+  "status": "complete"
+}
