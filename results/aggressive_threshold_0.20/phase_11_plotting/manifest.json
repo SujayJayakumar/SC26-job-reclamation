@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-04-08T17:03:37.005087+00:00",
+  "display_name": "Plotting",
+  "force": true,
+  "payload_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/aggressive_threshold_0.20/phase_11_plotting/payload.json",
+  "phase_id": "phase_11_plotting",
+  "scenario": "aggressive_threshold_0.20",
+  "seed": 42,
+  "status": "complete"
+}
