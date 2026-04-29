@@ -1,0 +1,41 @@
+{
+  "active_opportunistic_rows": 211606,
+  "allowed_total_util": 0.25,
+  "baseline_reference": {
+    "baseline_mean_cpu_util": 0.700766825016501,
+    "baseline_mean_gpu_util": 0.005318715518057774,
+    "baseline_primary_core_minutes": 12931969376.976,
+    "capacity_core_minutes": 18454026240.0,
+    "node_count": 422,
+    "scenario": "original_threshold_0.15",
+    "timestamp_count": 34164
+  },
+  "cluster_utilization_improvement_pct": 0.5063885722533795,
+  "completion_count": 3383,
+  "interference_event_count": 924,
+  "mean_primary_cpu_util": 0.16023221495064516,
+  "mean_total_cpu_util": 0.3924504590105708,
+  "metric_definitions": {
+    "interference_events": "same as preemption_count in the current conservative model, because primary interference is represented by protective preemption before oversubscription is allowed to persist",
+    "preemption_count": "count of node-timestamp intervals where opportunistic work was preempted to protect primary workload",
+    "relative_cpu_throughput_gain_fraction": "opportunistic_cpu_core_minutes / baseline_primary_core_minutes",
+    "relative_cpu_throughput_gain_pct": "100 * opportunistic_cpu_core_minutes / baseline_primary_core_minutes",
+    "throughput_proxy": "executed opportunistic CPU core-minutes and GPU device-minutes",
+    "utilization_improvement": "mean(total_util - primary_cpu_util) across the simulated rows, plus whole-cluster CPU capacity uplift from executed opportunistic core-minutes"
+  },
+  "metrics_summary_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/buffered_threshold_0.15/phase_10_metrics/metrics_summary.parquet",
+  "metrics_weekly_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/buffered_threshold_0.15/phase_10_metrics/metrics_weekly.parquet",
+  "mode": "buffered",
+  "preemption_count": 924,
+  "relative_cpu_throughput_gain_fraction": 0.007226206409549359,
+  "relative_cpu_throughput_gain_pct": 0.7226206409549358,
+  "rows_evaluated": 314390,
+  "scenario": "buffered_threshold_0.15",
+  "status": "complete",
+  "threshold": 0.15,
+  "throughput_proxy_cpu_core_minutes": 93449080.0,
+  "throughput_proxy_gpu_device_minutes": 202970.0,
+  "unique_opportunistic_jobs_run": 5506,
+  "utilization_improvement_points": 0.23221824405992564,
+  "weekly_windows": 35
+}
