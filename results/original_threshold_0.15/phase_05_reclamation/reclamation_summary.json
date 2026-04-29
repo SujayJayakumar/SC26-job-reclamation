@@ -1,0 +1,32 @@
+{
+  "columns": [
+    "timestamp",
+    "node_id",
+    "threshold",
+    "cpu_util",
+    "gpu_util",
+    "memory_util",
+    "cpu_underutilized",
+    "gpu_underutilized",
+    "allocated_cores",
+    "allocated_gpus",
+    "job_id",
+    "active_job_count",
+    "reclaimable_cores",
+    "reclaimable_gpus",
+    "gpu_total_load_estimate",
+    "gpu_cards_needed_after_compaction"
+  ],
+  "coverage_end": "2026-01-31T23:50:00",
+  "coverage_start": "2025-06-08T18:10:00",
+  "gpu_reclamation_rule": "total allocated GPU load is estimated as allocated_gpus * gpu_util and compacted onto the minimum number of cards such that no card exceeds 80% utilization",
+  "max_reclaimable_cores": 127,
+  "max_reclaimable_gpus": 26,
+  "node_count": 388,
+  "reclamation_plan_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/original_threshold_0.15/phase_05_reclamation/reclamation_plan.parquet",
+  "rows_with_cpu_reclamation": 162020,
+  "rows_with_gpu_reclamation": 188792,
+  "rows_written": 302724,
+  "status": "complete",
+  "timestamp_count": 34162
+}

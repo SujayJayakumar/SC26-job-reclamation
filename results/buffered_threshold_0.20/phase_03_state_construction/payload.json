@@ -1,0 +1,40 @@
+{
+  "active_job_stats": {
+    "expanded_active_rows": 13389099,
+    "max_jobs_per_slot": 28,
+    "multi_job_slots": 366469,
+    "node_interval_slots_with_jobs": 12722311
+  },
+  "columns": [
+    "timestamp",
+    "node_id",
+    "cpu_util",
+    "gpu_util",
+    "memory_util",
+    "allocated_cores",
+    "allocated_gpus",
+    "job_id",
+    "active_job_count",
+    "telemetry_present_any"
+  ],
+  "completed_at": "2026-04-06T07:25:40.107266+00:00",
+  "coverage_end": "2026-01-31T23:50:00",
+  "coverage_start": "2025-06-08T18:00:00",
+  "display_name": "State Construction",
+  "explicit_missing_telemetry_rows": 410,
+  "metrics_missing_after_ffill": {
+    "cpu_util_missing": 0,
+    "gpu_util_missing": 0,
+    "memory_util_missing": 0
+  },
+  "multi_job_resolution_rule": "allocated resources are summed across active jobs; job_id is the dominant active job ordered by allocated_cores_per_node desc, allocated_gpus_per_node desc, job_id asc",
+  "node_count": 422,
+  "phase_id": "phase_03_state_construction",
+  "rows_written": 14417208,
+  "scenario": "buffered_threshold_0.20",
+  "seed": 42,
+  "started_at": "2026-04-06T07:01:41.550051+00:00",
+  "state_cache_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/buffered_threshold_0.20/phase_03_state_construction/state_cache.parquet",
+  "status": "complete",
+  "timestamp_count": 34164
+}

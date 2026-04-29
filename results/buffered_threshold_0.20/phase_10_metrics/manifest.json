@@ -1,0 +1,10 @@
+{
+  "completed_at": "2026-04-06T08:03:02.434885+00:00",
+  "display_name": "Metrics",
+  "force": true,
+  "payload_path": "/home/sujay/Desktop/SUJAY/SC Paper/results/buffered_threshold_0.20/phase_10_metrics/payload.json",
+  "phase_id": "phase_10_metrics",
+  "scenario": "buffered_threshold_0.20",
+  "seed": 42,
+  "status": "complete"
+}
