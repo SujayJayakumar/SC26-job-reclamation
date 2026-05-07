@@ -21,6 +21,8 @@ PHASE_GROUPS: dict[str, list[str]] = {
         "phase_04_detection",
         "phase_05_reclamation",
         "phase_06_opportunistic_job_modeling",
+        "phase_07_injection",
+        "phase_08_preemption",
     ],
     "simulate": ["phase_09_simulation_loop"],
     "metrics": ["phase_10_metrics"],
